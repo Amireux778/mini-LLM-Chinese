@@ -229,13 +229,13 @@ python client.py
 # 四、🎓引用
 如果你觉得本项目对你有所帮助，欢迎引用。
 ```conf
-@misc{mini-ChatGPT-Chinese,
-    author={Jiaxing Song},
-    title={mini-ChatGPT-Chinese-0.1B},
-    year={2024},
+@misc{mini-llm,
+    author={Mengjie Zhou},
+    title={mini-llm-0.02B},
+    year={2025},
     publisher = {GitHub},
     journal = {GitHub repository},
-    howpublished = {\url{https://github.com/JiaxingSong718/mini-ChatGPT-Chinese}},
+    howpublished = {\url{https://github.com/Amireux778/mini-llm}},
 }
 ```
 

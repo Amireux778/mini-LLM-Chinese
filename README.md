@@ -16,7 +16,8 @@ mini-llm-0.02B 为中文对话小模型，模型参数只有0.02B（算共享权
 - 公开所有预训练、SFT指令微调、DPO偏好优化数据集来源。
 - 训练Tokenizer
 - 预训练：整合为端到端的预训练。
-- SFT微调。
+- full_sft微调。
+- LoRA微调
 - RLHF偏好优化：使用DPO进行全量偏好优化。
 
 # 二、🛠️mini-ChatGPT-Chinese-0.1B模型训练过程 

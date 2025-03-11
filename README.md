@@ -45,7 +45,7 @@ CPU: AMD EPYC 7763 64-Core Processor
 内存：512 GB
 显卡：NVIDIA GeForce RTX 4090(24G) * 8
 ```
-1. **tokenizer 训练**： （待补充）
+1. **tokenizer 训练**： 训练时间40分钟左右
 
 2. **预训练**：（待补充）
 

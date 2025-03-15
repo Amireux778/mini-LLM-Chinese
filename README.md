@@ -8,12 +8,12 @@
 
 
 # 一、👋介绍 
-本项目的目标是从0开始训练一个生成式语言模型，包括tokenizer训练、模型预训练、SFT指令微调、RLHF优化(DPO)等。 
+本项目的目标是从0开始训练一个生成式语言模型，包括tokenizer训练、模型预训练、SFT指令微调、LoRA微调、RLHF优化(DPO)等。 
 
-mini-llm-0.02B 为中文对话小模型，模型参数只有0.02B（算共享权重约25.83M）。 
+mini-llm-0.02B 为中文对话小模型，模型参数只有0.02B（算共享权重约25.83M），可以为显卡资源受限但又想走通从头训练大模型整个流程的人提供了方式。 
 
 
-- 公开所有预训练、SFT指令微调、DPO偏好优化数据集来源。
+- 公开所有预训练、SFT指令微调、LoRA微调、DPO偏好优化数据集来源。
 - 训练Tokenizer
 - 预训练：整合为端到端的预训练。
 - full_sft微调。
@@ -23,22 +23,14 @@ mini-llm-0.02B 为中文对话小模型，模型参数只有0.02B（算共享权
 # 二、🛠️mini-ChatGPT-Chinese-0.1B模型训练过程 
 
 ## 2.1 预训练数据集
-所有数据集均来自互联网公开的**单轮对话**数据集。主要数据集包括： 
-
-1. 社区问答json版webtext2019zh-大规模高质量数据集，见：[nlp_chinese_corpus](https://github.com/brightmart/nlp_chinese_corpus)。共410万，选取大约200万条用于tokenizer训练。
-2. baike_qa2019百科类问答，见：<https://aistudio.baidu.com/datasetdetail/107726>，共140万，选取大约20万条。
-3. 中国医药领域问答数据集，见：[Chinese-medical-dialogue-data](https://github.com/Toyhom/Chinese-medical-dialogue-data)，共79万条左右。
-5. 知乎问答数据，见：[Zhihu-KOL](https://huggingface.co/datasets/wangrui6/Zhihu-KOL)，共100万条左右。
-6. belle开源的指令训练数据，见：[train_0.5M_CN](https://huggingface.co/datasets/BelleGroup/train_0.5M_CN)，共50万条左右。
-
-数据集总数量250万左右：预训练集：200万左右，评估集：还未设置。 SFT微调数据大概50万和DPO优化数据集待更新。
+预训练数据集目前为网上公开的数据集，其是将匠数大模型数据集的中文部分提取出来， 清洗出字符<512长度的大约1.6GB的语料直接拼接成预训练数据 pretrain_hq.jsonl
 
 ## 2.2 模型
 （待补充）
 
 模型参数：0.02B。词表大小：6400，仅包含中文和少量英文。
 
-## 2.3 训练过程
+## 2.3 训练配置
 硬件：
 ```bash
 # 预训练及sft阶段：
@@ -46,15 +38,8 @@ CPU: AMD EPYC 7763 64-Core Processor
 内存：512 GB
 显卡：NVIDIA GeForce RTX 4090(24G) * 8
 ```
-1. **tokenizer 训练**： 训练时间40分钟左右
 
-2. **预训练**：（待补充）
 
-3. **prompt监督微调（SFT）**：（待补充）
-
-4. **dpo直接偏好优化（RLHF）**：待更新
-
-存在问题：预训练数据集只有200万左右，模型参数也仅0.02B，不能涵盖所有领域，会有答非所问、废话生成器的情况。
 
 
 # 三、📑使用说明

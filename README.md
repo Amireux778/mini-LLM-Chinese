@@ -199,7 +199,7 @@ python train_lora.py
 6. 定期复查：定期进行头痛检查和复查，以便及时发现并处理可能的头痛。
 ```
 
-## 3.5 RLHF（强化学习人类反馈优化方法）——待更新~
+## 3.5 RLHF（强化学习人类反馈优化方法）
 
 偏好方法主要有两种，分别是PPO和DPO，具体实现请自行搜索论文及博客，**本项目采用DPO微调方法，比较节省显存**。 
 
@@ -228,7 +228,7 @@ python train_dpo.py
 # 四、🎓引用
 如果你觉得本项目对你有所帮助，欢迎引用。
 ```conf
-@misc{mini-llm,
+@misc{mini-LLM-Chinese,
     author={Mengjie Zhou},
     title={mini-llm-0.02B},
     year={2025},

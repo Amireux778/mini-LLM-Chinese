@@ -2,7 +2,7 @@
 
 # 中文对话0.02B小模型 mini-llm-0.02B  
 
-中文  | [English](./README_en.md)  
+
 
 </div>
 
